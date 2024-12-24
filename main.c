@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
 
     while ((timeCost = time(NULL) - startTime) <= seconds) {
         char *s = secondsToClockString(seconds - timeCost);
-        printf("%s\r", s);
+        printf("%s                          \r", s);
         fflush(stdout);
         sleep(1);
     }
