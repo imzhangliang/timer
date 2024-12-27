@@ -26,6 +26,7 @@ void timesUp() {
         fflush(stdout);
         usleep(20000);
     }
+    printf("\n");
     for (int i = 1; i <= strlen(s); i++) {
         printf("%.*s\r", i, s);
         fflush(stdout);
@@ -40,8 +41,8 @@ int main(int argc, char **argv) {
     }
 
     int minutes = atoi(argv[1]);
-    if (minutes == 0) {
-        fprintf(stderr, "argument must be a positive integer\n");
+    if (minutes < 0) {
+        fprintf(stderr, "argument must not be a negative number\n");
         usage(argv[0]);
     }
 
